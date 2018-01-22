@@ -1,0 +1,20 @@
+1.ios下input设置type=button属性disabled设置true,会出现样式文字和背景异常问题，使用opacity=1来解决
+
+2.一些情况下对非可点击元素如(label,span)监听click事件，ios下不会触发，css增加cursor:pointer就搞定了
+
+3.input为fixed定位在ios下的bug问题:input固定定位在顶部或者底部，在页面滚动一些距离后，点击input(弹出键盘)，input位置会出现在中间位置。可以使用内容列表框也是fixed定位,这样不会出现fixed错位的问题
+
+4.移动端字体小于12px使用四周边框或者背景色块，安卓文字偏上bug问题，可以使用整体放大1倍再缩放，而且字体尽量不要是奇数
+
+5.在移动端图片上传图片 使用accept="image/*" multiple,兼容低端机的问题
+
+6.在h5嵌入app中，ios如果出现垂直滚动条时，手指滑动页面滚动之后，滚动很快停下来，好像踩着刹车在开车，有“滚动很吃力”的感觉self.webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;对webview设置了更低的“减速率”
+
+7.click 300ms 延时响应 使用 Fastclick
+	window.addEventListener( "load", function() {
+	FastClick.attach( document.body );
+	}, false );
+
+8.input 有placeholder情况下不要设置行高，否则会placeholder文字会偏上
+
+9.
